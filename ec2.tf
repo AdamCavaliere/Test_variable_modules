@@ -1,5 +1,6 @@
 variable "size" {
     description = "size of instances"
+    default = {"name_description"="medium_ones","amount"="4"}
 }
 
 module "ec2_cluster" {

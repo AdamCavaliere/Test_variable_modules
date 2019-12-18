@@ -1,3 +1,7 @@
+variable "size" {
+    description = "size of instances"
+}
+
 module "ec2_cluster" {
   source                 = "terraform-aws-modules/ec2-instance/aws"
   version                = "~> 2.0"

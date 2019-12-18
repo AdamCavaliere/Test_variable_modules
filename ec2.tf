@@ -1,7 +1,12 @@
-module "consumer-ec2-instance" {
-  source  = "app.terraform.io/azc/consumer-ec2-instance/aws"
-  version = "1.6"
-  instance_count = var.size.amount
-  name = var.size.name_description
-}
+module "ec2_cluster" {
+  source                 = "terraform-aws-modules/ec2-instance/aws"
+  version                = "~> 2.0"
 
+  name                   = var.size.name_description
+  instance_count         = var.size.amount
+
+  ami                    = "ami-ebd02392"
+  instance_type          = "t2.micro"
+  key_name               = "azc"
+  
+}
